@@ -1,7 +1,7 @@
 ## Setup
 
 ```bash
-git clone https://github.com/nv-tlabs/Difix3D.git
+git clone https://github.com/aurelianocyp/Difix3D.git
 cd Difix3D
 conda create -n difix3d python=3.12
 pip install -r requirements.txt
