@@ -1,26 +1,9 @@
-# Difix3D+
-
-**Difix3D+: Improving 3D Reconstructions with Single-Step Diffusion Models**  
-[Jay Zhangjie Wu*](https://zhangjiewu.github.io/), [Yuxuan Zhang*](https://scholar.google.com/citations?user=Jt5VvNgAAAAJ&hl=en), [Haithem Turki](https://haithemturki.com/), [Xuanchi Ren](https://xuanchiren.com/), [Jun Gao](https://www.cs.toronto.edu/~jungao/),  
-[Mike Zheng Shou](https://sites.google.com/view/showlab/home?authuser=0), [Sanja Fidler](https://www.cs.utoronto.ca/~fidler/), [Zan Gojcic†](https://zgojcic.github.io/), [Huan Ling†](https://www.cs.toronto.edu/~linghuan/) _(*/† equal contribution/advising)_  
-CVPR 2025 (Oral)  
-[Project Page](https://research.nvidia.com/labs/toronto-ai/difix3d/) | [Paper](https://arxiv.org/abs/2503.01774) | [Model](https://huggingface.co/nvidia/difix) | [Demo](https://huggingface.co/spaces/nvidia/difix)
-
-<div align="center">
-  <img src="assets/demo.gif" alt=""  width="1100" />
-</div>
-
-
-## News
-
-* [11/06/2025] Code and models are now available! We will present our work at CVPR 2025 ([oral](https://cvpr.thecvf.com/virtual/2025/oral/35364), [poster](https://cvpr.thecvf.com/virtual/2025/poster/34172)). See you in Nashville🎵!
-
-
 ## Setup
 
 ```bash
 git clone https://github.com/nv-tlabs/Difix3D.git
 cd Difix3D
+conda create -n difix3d python=3.12
 pip install -r requirements.txt
 ```
 
