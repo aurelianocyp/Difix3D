@@ -6,6 +6,7 @@ cd Difix3D
 conda create -n difix3d python=3.12
 pip install -r requirements.txt
 ```
+可能需要先把xformers库注释掉才可以pip
 
 ## Quickstart (diffusers)
 
