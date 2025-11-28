@@ -155,6 +155,7 @@ Run Difix3D finetuning with nerfstudio.
 ```bash
 SCENE_ID=032dee9fb0a8bc1b90871dc5fe950080d0bcd3caf166447f44e60ca50ac04ec7
 DATA=DATA_DIR/${SCENE_ID}
+# 这里需要自己准备好data，可以发现上一行有个data dir
 DATA_FACTOR=4
 CKPT_PATH=CKPR_DIR/${SCENE_ID}/nerfacto/nerfstudio_models/step-000029999.ckpt # Path to the pretrained checkpoint file
 OUTPUT_DIR=outputs/difix3d/nerfacto/${SCENE_ID}
