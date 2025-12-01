@@ -46,6 +46,8 @@ output_image.save("example_output.png")
 
 #### Data Preparation
 
+可以不用管这个，下面有nerfstudio的数据准备
+
 Prepare your dataset in the following JSON format:
 
 ```json
