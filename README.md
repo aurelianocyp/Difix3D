@@ -161,6 +161,7 @@ DATA=dataset/${SCENE_ID}
 DATA_FACTOR=4
 CKPT_PATH=CKPR_DIR/${SCENE_ID}/nerfacto/nerfstudio_models/step-000029999.ckpt # Path to the pretrained checkpoint file
 OUTPUT_DIR=outputs/difix3d/nerfacto/${SCENE_ID}
+PYTHONPATH=/home/xxx/workspace/Difix3D:$PYTHONPATH 
 
 CUDA_VISIBLE_DEVICES=0 ns-train difix3d \
     --data ${DATA} --pipeline.model.appearance-embed-dim 0 --pipeline.model.camera-optimizer.mode off --save_only_latest_checkpoint False --vis viewer \
