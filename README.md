@@ -3,10 +3,24 @@
 ```bash
 git clone https://github.com/aurelianocyp/Difix3D.git
 cd Difix3D
-conda create -n difix3d python=3.10
+conda create -n difix3d python=3.8
+conda activate difix3d
+# 先本地安装nerfstudio
+pip install --upgrade pip
+pip install torch==2.1.2+cu118 torchvision==0.16.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
+conda install -c "nvidia/label/cuda-11.8.0" cuda-toolkit
+pip install ninja git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+git clone https://github.com/nerfstudio-project/nerfstudio.git
+cd nerfstudio
+pip install --upgrade pip setuptools
+pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple
+# 再安装difix3d
 pip install -r requirements.txt
+# 再安装nerfstudio的difix3d修订
+cd examples/nerfstudio
+pip install -e .
+cd ../..
 ```
-可能需要先把xformers库注释掉才可以pip
 
 ## Quickstart (diffusers)
 
@@ -145,13 +159,6 @@ DATA_DIR/
 ```
 
 ### nerfstudio
-
-Setup the nerfstudio environment.
-```bash
-cd examples/nerfstudio
-pip install -e .
-cd ../..
-```
 
 Run Difix3D finetuning with nerfstudio.
 ```bash
