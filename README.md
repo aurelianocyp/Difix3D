@@ -192,7 +192,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/gsplat/simple_trainer_difix3d.py default 
     --data_dir ${DATA} --data_factor ${DATA_FACTOR} \
     --result_dir ${OUTPUT_DIR} --no-normalize-world-space --test_every 1 --ckpt ${CKPT_PATH}
 ```
-
+这里xxx就保持xxx就好了，但如果删掉路径设置就会报错找不到库，可能是因为在当前shell环境中实际上是空的或未设置。当你添加虚假路径时，你也在命令中保留了:$PYTHONPATH，这个冒号:起到了关键作用。
 
 ## Difix3D+: With real-time post-rendering
 
