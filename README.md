@@ -135,8 +135,7 @@ python src/inference_difix.py \
 
 ### Data Format
 
-The data should be organized in the following structure:
-
+The data should be organized in the following structure:通过nerfstudio的数据处理即可得到，只是需要改代码，在ffmpeg时把frame_改为frame_train和frame_eval
 ```
 DATA_DIR/
 ├── {SCENE_ID}
@@ -166,6 +165,7 @@ SCENE_ID=inno_stone
 DATA=dataset/${SCENE_ID}
 # 这里需要自己准备好data，可以发现上一行有个data dir
 DATA_FACTOR=4
+# 这里需要先用nerfstudio自己训练一个nerfacto的模型出来
 CKPT_PATH=CKPR_DIR/${SCENE_ID}/nerfacto/nerfstudio_models/step-000029999.ckpt # Path to the pretrained checkpoint file
 OUTPUT_DIR=outputs/difix3d/nerfacto/${SCENE_ID}
  
