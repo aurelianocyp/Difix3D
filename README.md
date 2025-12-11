@@ -161,6 +161,7 @@ DATA_DIR/
 
 Run Difix3D finetuning with nerfstudio.
 ```bash
+cd ~/workspace/Difix3D
 SCENE_ID=inno_stone
 DATA=dataset/${SCENE_ID}
 # 这里需要自己准备好data，可以发现上一行有个data dir
