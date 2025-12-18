@@ -177,6 +177,10 @@ PYTHONPATH=/home/xxx/workspace/Difix3D:$PYTHONPATH CUDA_VISIBLE_DEVICES=0 ns-tra
     nerfstudio-data --orientation-method none --center_method none --auto-scale-poses False --downscale_factor ${DATA_FACTOR} --eval_mode filename
 ```
 
+这里xxx就保持xxx就好了，但如果删掉路径设置就会报错找不到库，可能是因为在当前shell环境中实际上是空的或未设置。当你添加虚假路径时，你也在命令中保留了:$PYTHONPATH，这个冒号:起到了关键作用。
+
+KeyError: 'step'是因为pretrained已经29999了而difix的步数设置的是30000，多设置一点就开始训练了
+
 ### gsplat
 
 Install the gsplat following the instructions in the [gsplat repository](https://github.com/nerfstudio-project/gsplat?tab=readme-ov-file#installation).
@@ -193,7 +197,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/gsplat/simple_trainer_difix3d.py default 
     --data_dir ${DATA} --data_factor ${DATA_FACTOR} \
     --result_dir ${OUTPUT_DIR} --no-normalize-world-space --test_every 1 --ckpt ${CKPT_PATH}
 ```
-这里xxx就保持xxx就好了，但如果删掉路径设置就会报错找不到库，可能是因为在当前shell环境中实际上是空的或未设置。当你添加虚假路径时，你也在命令中保留了:$PYTHONPATH，这个冒号:起到了关键作用。
+
 
 ## Difix3D+: With real-time post-rendering
 
@@ -206,33 +210,4 @@ python src/inference_difix.py \
     --prompt "remove degradation" \
     --output_dir "outputs/difix3d+" \
     --timestep 199
-```
-
-## Acknowledgements
-
-Our work is built upon the following projects:
-- [diffusers](https://github.com/huggingface/diffusers)
-- [img2img-turbo](https://github.com/GaParmar/img2img-turbo)
-- [nerfstudio](https://github.com/nerfstudio-project/nerfstudio)
-- [gsplat](https://github.com/nerfstudio-project/gsplat)
-- [DL3DV-10K](https://github.com/DL3DV-10K/Dataset)
-- [nerfbusters](https://github.com/ethanweber/nerfbusters)
-
-Shoutout to all the contributors of these projects for their invaluable work that made this research possible.
-
-## License/Terms of Use:
-
-The use of the model and code is governed by the NVIDIA License. See [LICENSE.txt](LICENSE.txt) for details.
-Additional Information:  [LICENSE.md · stabilityai/sd-turbo at main](https://huggingface.co/stabilityai/sd-turbo/blob/main/LICENSE.md)
-
-## Citation
-
-```bibtex
-@inproceedings{wu2025difix3d+,
-  title={DIFIX3D+: Improving 3D Reconstructions with Single-Step Diffusion Models},
-  author={Wu, Jay Zhangjie and Zhang, Yuxuan and Turki, Haithem and Ren, Xuanchi and Gao, Jun and Shou, Mike Zheng and Fidler, Sanja and Gojcic, Zan and Ling, Huan},
-  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
-  pages={26024--26035},
-  year={2025}
-}
 ```
