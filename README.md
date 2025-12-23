@@ -161,6 +161,7 @@ DATA_DIR/
 
 Run Difix3D finetuning with nerfstudio.
 ```bash
+conda activate difix3d
 cd ~/workspace/Difix3D
 SCENE_ID=inno_stone
 DATA=dataset/${SCENE_ID}
